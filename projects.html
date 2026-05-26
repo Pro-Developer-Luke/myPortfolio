@@ -32,333 +32,253 @@
 
     <div class="wrapper">
         <h1>Projects</h1>
-        <!-- Drop down to view projects -->
-        <ul class="accordion">
-            <li>
-                <input type="checkbox" name="accordion" id="first">
-                <label for="first">Software Development</label>
-                <div class="content">
-                    <div class="content-section">
-                        <div class="top">
-                            <h3>Dynamic eLearning Program Powered by AI<br>
-                                <center><a class="sociallinks" target="_blank" href="https://github.com/Pro-Developer-Luke/EmployeeCoach-Major-Project"><i class="fa-brands fa-square-github"></i></a></center>
-                            </h3>
-                        </div>
-                        <div class="galleryThumbnail">
-                            <div class="gallery">
-                                <button type="button" class="gallery-hero" aria-label="Enlarge AI eLearning screenshot">
-                                    <img src="assets/projects/EmployeeCoach_Preview.png" alt="AI eLearning platform preview">
-                                    <span class="gallery-badge"><i class="fa-solid fa-expand"></i><span class="gallery-count"></span></span>
-                                </button>
-                                <template>
-                                    <img src="assets/projects/EmployeeCoach_Preview.png" alt="AI eLearning platform">
-                                </template>
-                            </div>
-                        </div>
 
-                        
-                        <h4>Description</h4>
-                        <p>For my major university project, I developed an innovative, scalable eLearning platform designed to integrate seamlessly with 
-                           existing business infrastructures. Built using the .NET framework with C# for backend development and SQL for retrieving, processing, 
-                           and storing data into an existing database, the system was created to ease the transition for businesses already using eLearning by 
-                           allowing full integration of their current employee databases. The platform leverages the LLaMA 3.1 8B Large Language Model, applying 
-                           parameters such as an employee’s role, industry, and experience level to dynamically generate real-world scenarios and adaptive, 
-                           AI-driven assessments tailored to specific job functions. This ensures highly relevant, engaging learning experiences that improve 
-                           both knowledge retention and practical application. Designed with enterprise flexibility and scalability in mind, the platform supports 
-                           diverse organisational structures and training workflows, making it suitable for both independent businesses and large enterprises 
-                           seeking a more intelligent and personalised approach to workforce development.</p>
-                        <h4>Technologies</h4>
-                        <img id="project-tools" src="assets/tools/csharp.svg" alt="C#">
-                        <img id="project-tools" src="assets/tools/sql.svg" alt="SQL">
-                    </div>
-                    <div class="content-divider"></div>  
-                    <div class="content-section">
-                        <div class="top">
-                            <h3>Shift and Rota Management Program<br>
-                                <center><a class="sociallinks" target="_blank" href="https://github.com/Pro-Developer-Luke/Rota-Management-System"><i class="fa-brands fa-square-github"></i></a></center>
-                            </h3>
-                        </div>
-                        <div class="galleryThumbnail">
-                            <div class="gallery">
-                                <button type="button" class="gallery-hero" aria-label="Enlarge Shift Rota screenshot">
-                                    <img src="assets/projects/GoodLife_Preview.png" alt="Shift and rota management preview">
-                                    <span class="gallery-badge"><i class="fa-solid fa-expand"></i><span class="gallery-count"></span></span>
-                                </button>
-                                <template>
-                                    <img src="assets/projects/GoodLife_Preview.png" alt="Shift and rota management">
-                                </template>
-                            </div>
-                        </div>
-                        <h4>Description</h4>
-                        <p>A management tool was created for a local veterinary practice, identifying the key requirements and functionalities needed for the 
-                            program. This included tracking employee schedules, managing shift changes, and assigning tasks. I used C# in the .NET framework for 
-                            the front-end development, providing a user-friendly interface and easy navigation for employees and managers. For the backend, I used 
-                            SQL to manage the database and retrieve specific scheduling information, designing a schema to include tables for employees and shifts. The program connected to a backend relational database to store and manage all necessary information, including employee details, shift schedules, task assignments, and rota information. Overall, the use of technologies such as C# and SQL in the .NET framework enabled the creation of a comprehensive management tool for employee shifts and rota information, streamlining scheduling processes and improving overall efficiency.</p>
-                        <h4>Technologies</h4>
-                        <img id="project-tools" src="assets/tools/csharp.svg" alt="C#">
-                        <img id="project-tools" src="assets/tools/sql.svg" alt="SQL">
-                    </div>                
-                </div>
-            </li>
+        <div class="project-filters">
+          <button type="button" class="filter-pill active" data-filter="all">All</button>
+          <button type="button" class="filter-pill" data-filter="Software Development">Software Development</button>
+          <button type="button" class="filter-pill" data-filter="Web Development">Web Development</button>
+          <button type="button" class="filter-pill" data-filter="Scripting">Scripting</button>
+          <button type="button" class="filter-pill" data-filter="Data Warehousing">Data Warehousing</button>
+        </div>
 
-            <li>
-                <input type="checkbox" name="accordion" id="second">
-                <label for="second">Web Development</label>
-                <div class="content">
-                    <div class="content-section">
-                        <div class="top">
-                            <h3>Factor IT — Technology Solutions<br>
-                                <center><a class="sociallinks" target="_blank" href="https://factorit.co.uk"><i class="fa-solid fa-globe"></i></a></center>
-                            </h3>
-                        </div>
-                        <div class="galleryThumbnail">
-                            <div class="gallery">
-                                <button type="button" class="gallery-hero" aria-label="View Factor IT screenshots">
-                                    <img src="assets/projects/factorit/home.png" alt="Factor IT home page">
-                                    <span class="gallery-badge"><i class="fa-solid fa-expand"></i><span class="gallery-count"></span></span>
-                                </button>
-                                <template>
-                                    <img src="assets/projects/factorit/home.png" alt="Factor IT — Home">
-                                    <img src="assets/projects/factorit/home2.png" alt="Factor IT — Home (continued)">
-                                    <img src="assets/projects/factorit/blog.png" alt="Factor IT — Blog">
-                                    <img src="assets/projects/factorit/contact.png" alt="Factor IT — Contact">
-                                    <img src="assets/projects/factorit/footer.png" alt="Factor IT — Footer">
-                                </template>
-                            </div>
-                        </div>
-                        <h4>Description</h4>
-                        <p>Factor IT is my latest client project: a tailored technology solutions company based in Yorkshire, offering everything from
-                            web design and telephony to managed IT services, connectivity, and infrastructure management. I designed and built their
-                            website to present a clean, trustworthy face for a broad service offering — communicating technical expertise and
-                            environmental responsibility while making it easy for businesses to find the right solution and get in touch.</p>
-                        <h4>Technologies</h4>
-                        <img id="project-tools" src="assets/tools/html5.svg" alt="HTML5">
-                        <img id="project-tools" src="assets/tools/css3.svg" alt="CSS3">
-                        <img id="project-tools" src="assets/tools/javascript.svg" alt="JavaScript">
-                        <img id="project-tools" src="assets/tools/wordpress.svg" alt="WordPress">
-                    </div>
-                    <div class="content-divider"></div>
-                    <div class="content-section">
-                        <div class="top">
-                            <h3>ReelSteelScrapmen<br>
-                                <center><a class="sociallinks" target="_blank" href="https://www.reelsteelscrapmen.co.uk/"><i class="fa-solid fa-globe"></i></a></center>
-                            </h3>
-                        </div>
-                        <div class="galleryThumbnail">
-                            <div class="gallery">
-                                <button type="button" class="gallery-hero" aria-label="View ReelSteelScrapmen screenshots">
-                                    <img src="assets/projects/reelsteelscrapmen/home.png" alt="ReelSteelScrapmen home page">
-                                    <span class="gallery-badge"><i class="fa-solid fa-expand"></i><span class="gallery-count"></span></span>
-                                </button>
-                                <template>
-                                    <img src="assets/projects/reelsteelscrapmen/home.png" alt="ReelSteelScrapmen — Home">
-                                    <img src="assets/projects/reelsteelscrapmen/services.png" alt="ReelSteelScrapmen — Services">
-                                    <img src="assets/projects/reelsteelscrapmen/faq.png" alt="ReelSteelScrapmen — FAQ">
-                                </template>
-                            </div>
-                        </div>
-                        <h4>Description</h4>
-                        <p>ReelSteelScrapmen is a scrap metal collection service based in Bradford, West Yorkshire, covering commercial, domestic,
-                            industrial, and personal clients. I built their website to highlight what sets them apart — eco-friendly processing,
-                            fast and reliable collection, an experienced team, and transparent pricing — with a clean, industrial look and clear
-                            calls to action to request a collection or get in touch.</p>
-                        <h4>Technologies</h4>
-                        <img id="project-tools" src="assets/tools/html5.svg" alt="HTML5">
-                        <img id="project-tools" src="assets/tools/css3.svg" alt="CSS3">
-                        <img id="project-tools" src="assets/tools/javascript.svg" alt="JavaScript">
-                    </div>
-                    <div class="content-divider"></div>
-                    <div class="content-section">
-                        <div class="top">
-                            <h3>Clearwater Accountancy Website<br>
-                                <center><a class="sociallinks" target="_blank" href="http://clearwater-accounting.co.uk/"><i class="fa-solid fa-globe"></i></a><a class="sociallinks" target="_blank" href="#"><i class="fa-brands fa-square-github"></i></a></center>
-                            </h3>
-                        </div>
-                        <div class="galleryThumbnail">
-                            <div class="gallery">
-                                <button type="button" class="gallery-hero" aria-label="View Clearwater screenshots">
-                                    <img src="assets/projects/clearwater/home.png" alt="Clearwater Accountancy home page">
-                                    <span class="gallery-badge"><i class="fa-solid fa-expand"></i><span class="gallery-count"></span></span>
-                                </button>
-                                <template>
-                                    <img src="assets/projects/clearwater/home.png" alt="Clearwater Accountancy — Home">
-                                    <img src="assets/projects/clearwater/services.png" alt="Clearwater Accountancy — Services">
-                                    <img src="assets/projects/clearwater/about.png" alt="Clearwater Accountancy — About">
-                                    <img src="assets/projects/clearwater/contact.png" alt="Clearwater Accountancy — Contact">
-                                </template>
-                            </div>
-                        </div>
+        <div id="project-grid" class="project-grid"></div>
 
-                        
-                        <h4>Description</h4>
-                        <p>For my first professional project, I independently developed a website for an accountancy firm, leveraging my skills in HTML5, CSS3, 
-                            and JavaScript. I incorporated external APIs to enhance specific processes and tailor the website to the project's scale. To ensure 
-                            data security and encryption, I implemented SSL certificates. Through thorough research, I carefully selected and used only necessary 
-                            resources to optimise the website's performance and efficiency. This project not only strengthened my existing skill set but also 
-                            allowed me to effectively deliver a functional and secure website for the accountancy firm in an area where data security is most 
-                            valuable.</p>
-                        <h4>Technologies</h4>
-                        <img id="project-tools" src="assets/tools/html5.svg" alt="HTML5">
-                        <img id="project-tools" src="assets/tools/css3.svg" alt="CSS3">
-                        <img id="project-tools" src="assets/tools/javascript.svg" alt="JavaScript">
-                    </div>
-                    <div class="content-divider"></div>  
-                    <div class="content-section">
-                        <div class="top">
-                            <h3>Gaming News Website<br>
-                                <center><a class="sociallinks" target="_blank" class="link" href="https://github.com/Pro-Developer-Luke/Gaming-News-Website"><i class="fa-brands fa-square-github"></i></a></center>
-                            </h3>
-                        </div>
-                        <div class="galleryThumbnail">
-                            <div class="gallery">
-                                <button type="button" class="gallery-hero" aria-label="View Gaming News screenshots">
-                                    <img src="assets/projects/Gamingnews_thumbnail.JPG" alt="Gaming news website preview">
-                                    <span class="gallery-badge"><i class="fa-solid fa-expand"></i><span class="gallery-count"></span></span>
-                                </button>
-                                <template>
-                                    <img src="assets/projects/Gamingnews_thumbnail.JPG" alt="Gaming news website — Home">
-                                    <img src="assets/projects/Gamingnews_preview_2.JPG" alt="Gaming news website — Article">
-                                </template>
-                            </div>
-                        </div>
+        <div class="project-source" hidden>
+          <!-- one <article class="project"> per project (Step 2) -->
 
-                        
-                        <h4>Description</h4>
-                        <p>I have embarked on an ongoing journey to create my own news article website focused on gaming, aimed at enhancing my web development 
-                            skill set. This project has been instrumental in deepening my understanding of backend web development, particularly with HTTP 
-                            protocols and PHP. Additionally, it has allowed me to develop advanced scripting capabilities, significantly broadening my technical 
-                            expertise. Through this endeavor, I am not only building a platform to share gaming news but also honing my abilities in creating 
-                            robust, dynamic web applications. This project has become the foundation of my advanced web development skills, while I have actively 
-                            attempted to create each component to my full potential with optimal web development practices, such as responsive design that does 
-                            not require breakpoints/media queries and functions flawlessly.</p>
-                        <h4>Technologies</h4>
-                        <img id="project-tools" src="assets/tools/html5.svg" alt="HTML5">
-                        <img id="project-tools" src="assets/tools/css3.svg" alt="CSS3">
-                        <img id="project-tools" src="assets/tools/javascript.svg" alt="JavaScript">
-                        <img id="project-tools" src="assets/tools/php.svg" alt="PHP">
-                        <img id="project-tools" src="assets/tools/sql.svg" alt="SQL">
-						<img id="project-tools" src="assets/tools/react.svg" alt="React">
-                    </div>
-                </div>
-            </li>
+          <article class="project" data-category="Software Development" data-title="Dynamic eLearning Program Powered by AI">
+            <img class="project-thumb" src="assets/projects/EmployeeCoach_Preview.png" alt="Dynamic eLearning Program Powered by AI">
+            <ul class="project-tools">
+              <li>C#</li>
+              <li>SQL</li>
+            </ul>
+            <div class="project-description">
+              <p>For my major university project, I developed an innovative, scalable eLearning platform designed to integrate seamlessly with
+                 existing business infrastructures. Built using the .NET framework with C# for backend development and SQL for retrieving, processing,
+                 and storing data into an existing database, the system was created to ease the transition for businesses already using eLearning by
+                 allowing full integration of their current employee databases. The platform leverages the LLaMA 3.1 8B Large Language Model, applying
+                 parameters such as an employee’s role, industry, and experience level to dynamically generate real-world scenarios and adaptive,
+                 AI-driven assessments tailored to specific job functions. This ensures highly relevant, engaging learning experiences that improve
+                 both knowledge retention and practical application. Designed with enterprise flexibility and scalability in mind, the platform supports
+                 diverse organisational structures and training workflows, making it suitable for both independent businesses and large enterprises
+                 seeking a more intelligent and personalised approach to workforce development.</p>
+            </div>
+            <ul class="project-links">
+              <li><a href="https://github.com/Pro-Developer-Luke/EmployeeCoach-Major-Project" target="_blank" rel="noopener" data-kind="github">GitHub</a></li>
+            </ul>
+            <template class="project-gallery">
+              <img src="assets/projects/EmployeeCoach_Preview.png" alt="AI eLearning platform">
+            </template>
+          </article>
 
-            <li>
-                <input type="checkbox" name="accordion" id="third">
-                <label for="third">Scripting</label>
-                <div class="content">
-                    <div class="content-section">
-                        <div class="top">
-                            <h3>Digit Recognition Program<br>
-                               <center><a class="sociallinks" target="_blank" href="https://github.com/Pro-Developer-Luke/AI-Digit-Recognition"><i class="fa-brands fa-square-github"></i></a></center>
-                            </h3>
-                        </div>
-                        <div class="galleryThumbnail">
-                            <div class="gallery">
-                                <button type="button" class="gallery-hero" aria-label="Enlarge Digit Recognition screenshot">
-                                    <img src="assets/projects/Digitrecognition_thumbnail.JPG" alt="Digit recognition program preview">
-                                    <span class="gallery-badge"><i class="fa-solid fa-expand"></i><span class="gallery-count"></span></span>
-                                </button>
-                                <template>
-                                    <img src="assets/projects/Digitrecognition_thumbnail.JPG" alt="Digit recognition program">
-                                </template>
-                            </div>
-                        </div>
-                        <h4>Description</h4>
-                        <p>I developed an AI-powered script using Python, utilising a large dataset and handwriting characteristics to detect handwritten numbers 
-                            with high accuracy. The script employed machine learning algorithms, specifically convolutional neural networks (CNNs), to analyse the
-                            digitised images and identify the corresponding numbers. The algorithm was trained on a vast dataset of handwritten numbers, enabling 
-                            it to recognise and learn the distinct characteristics of each digit, such as shape, size, and stroke patterns. Additionally, the 
-                            script calculated the probability and confidence of each detection, providing a comprehensive output. This allowed for accurate 
-                            analysis and verification of the results, as well as identification of potential errors or ambiguities. Once the script finished 
-                            processing, it displayed the detected numbers, along with their corresponding probabilities and confidence levels, enabling users 
-                            to make informed decisions.</p>
-                        <h4>Technologies</h4>
-                        <img id="project-tools" src="assets/tools/python.svg" alt="Python">
-                    </div>
-                    <div class="content-divider"></div>  
-                    <div class="content-section">
-                        <div class="top">
-                            <h3>Predicting House Sale Prices<br>
-                               <center><a class="sociallinks" target="_blank" href="https://github.com/Pro-Developer-Luke/AI-Digit-Recognition"><i class="fa-brands fa-square-github"></i></a></center>
-                            </h3>
-                        </div>
-                        <div class="galleryThumbnail">
-                            <div class="gallery">
-                                <button type="button" class="gallery-hero" aria-label="Enlarge House Price Prediction screenshot">
-                                    <img src="assets/projects/Housing_SalePrices_thumbnail.jpg" alt="House sale price prediction preview">
-                                    <span class="gallery-badge"><i class="fa-solid fa-expand"></i><span class="gallery-count"></span></span>
-                                </button>
-                                <template>
-                                    <img src="assets/projects/Housing_SalePrices_thumbnail.jpg" alt="House sale price prediction">
-                                </template>
-                            </div>
-                        </div>
-                        <h4>Description</h4>
-                        <p>In this project, I developed a machine learning model to predict house sale prices based on various property features and location data.
-                            I began by thoroughly evaluating the dataset and the nature of the prediction task, ultimately identifying it as a regression 
-                            problem—one that requires a supervised learning approach to estimate continuous numerical values. After preprocessing the data, 
-                            handling missing values, and performing feature engineering to improve model performance, I implemented and tested three regression 
-                            algorithms: Linear Regression, Random Forest, and XGBoost. Each model was evaluated using standard regression metrics such as 
-                            R² score, Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE) to assess prediction accuracy and generalisation. 
-                            The goal was to identify which model delivered the highest predictive capability based on the dataset's characteristics. 
-                            Ultimately, the results demonstrated that XGBoost provided the best overall performance, outperforming both Random Forest and 
-                            Linear Regression in terms of accuracy and robustness. This project showcases my ability to select appropriate machine learning 
-                            algorithms, perform model evaluation and comparison, and build effective solutions for real-world regression problems using supervised
-                            learning techniques.</p>
-                        <h4>Technologies</h4>
-                        <img id="project-tools" src="assets/tools/python.svg" alt="Python">
-                    </div>
-                </div>
-            </li>
+          <article class="project" data-category="Software Development" data-title="Shift and Rota Management Program">
+            <img class="project-thumb" src="assets/projects/GoodLife_Preview.png" alt="Shift and Rota Management Program">
+            <ul class="project-tools">
+              <li>C#</li>
+              <li>SQL</li>
+            </ul>
+            <div class="project-description">
+              <p>A management tool was created for a local veterinary practice, identifying the key requirements and functionalities needed for the
+                  program. This included tracking employee schedules, managing shift changes, and assigning tasks. I used C# in the .NET framework for
+                  the front-end development, providing a user-friendly interface and easy navigation for employees and managers. For the backend, I used
+                  SQL to manage the database and retrieve specific scheduling information, designing a schema to include tables for employees and shifts. The program connected to a backend relational database to store and manage all necessary information, including employee details, shift schedules, task assignments, and rota information. Overall, the use of technologies such as C# and SQL in the .NET framework enabled the creation of a comprehensive management tool for employee shifts and rota information, streamlining scheduling processes and improving overall efficiency.</p>
+            </div>
+            <ul class="project-links">
+              <li><a href="https://github.com/Pro-Developer-Luke/Rota-Management-System" target="_blank" rel="noopener" data-kind="github">GitHub</a></li>
+            </ul>
+            <template class="project-gallery">
+              <img src="assets/projects/GoodLife_Preview.png" alt="Shift and rota management">
+            </template>
+          </article>
 
-            <li>
-                <input type="checkbox" name="accordion" id="fourth">
-                <label for="fourth">Data Warehousing</label>
-                <div class="content">
-                    <div class="content-section">
-                        <div class="top">
-                            <h3>Bookstore Chain Data Warehouse<br>
-                               <center><a class="sociallinks" target="_blank" href="https://github.com/Pro-Developer-Luke/AI-Digit-Recognition"><i class="fa-brands fa-square-github"></i></a></center>
-                            </h3>
-                        </div>
-                        <div class="galleryThumbnail">
-                            <div class="gallery">
-                                <button type="button" class="gallery-hero" aria-label="Enlarge Data Warehouse screenshot">
-                                    <img src="assets/projects/DataWarehouse_Preview.JPG" alt="Bookstore data warehouse preview">
-                                    <span class="gallery-badge"><i class="fa-solid fa-expand"></i><span class="gallery-count"></span></span>
-                                </button>
-                                <template>
-                                    <img src="assets/projects/DataWarehouse_Preview.JPG" alt="Bookstore data warehouse">
-                                </template>
-                            </div>
-                        </div>
-                        <h4>Description</h4>
-                        <p>In this project, I designed and implemented a fully functional data warehousing system for a proposed multi-location bookstore 
-                            chain using PostgreSQL. The goal was to provide a scalable infrastructure capable of integrating, organising, and analysing data 
-                            from various branches to support business intelligence and strategic decision-making.
-                            
-                            I began by creating a robust ETL (Extract, Transform, Load) pipeline that streamlined the ingestion of sales, inventory, and customer 
-                            data from multiple sources into a central data warehouse. To ensure high performance and scalability, I utilized advanced PostgreSQL 
-                            features such as indexing for faster query execution and TimescaleDB partitioning to efficiently manage and query time-series data across 
-                            different store locations.
+          <article class="project" data-category="Web Development" data-title="Factor IT — Technology Solutions">
+            <img class="project-thumb" src="assets/projects/factorit/home.png" alt="Factor IT — Technology Solutions">
+            <ul class="project-tools">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>WordPress</li>
+            </ul>
+            <div class="project-description">
+              <p>Factor IT is my latest client project: a tailored technology solutions company based in Yorkshire, offering everything from
+                  web design and telephony to managed IT services, connectivity, and infrastructure management. I designed and built their
+                  website to present a clean, trustworthy face for a broad service offering — communicating technical expertise and
+                  environmental responsibility while making it easy for businesses to find the right solution and get in touch.</p>
+            </div>
+            <ul class="project-links">
+              <li><a href="https://factorit.co.uk" target="_blank" rel="noopener" data-kind="live">Live site</a></li>
+            </ul>
+            <template class="project-gallery">
+              <img src="assets/projects/factorit/home.png" alt="Factor IT — Home">
+              <img src="assets/projects/factorit/home2.png" alt="Factor IT — Home (continued)">
+              <img src="assets/projects/factorit/blog.png" alt="Factor IT — Blog">
+              <img src="assets/projects/factorit/contact.png" alt="Factor IT — Contact">
+              <img src="assets/projects/factorit/footer.png" alt="Factor IT — Footer">
+            </template>
+          </article>
 
-                            Once the data was structured and optimized, I developed a suite of advanced SQL queries to extract meaningful insights into key business 
-                            metrics. These queries allowed stakeholders to evaluate store performance by location, analyse sales trends over time, and identify 
-                            top-selling products and categories. Additionally, customer data was leveraged to enable targeted promotional campaigns, by identifying 
-                            individuals most likely to benefit from specific offers based on their purchasing behavior.
+          <article class="project" data-category="Web Development" data-title="ReelSteelScrapmen">
+            <img class="project-thumb" src="assets/projects/reelsteelscrapmen/home.png" alt="ReelSteelScrapmen">
+            <ul class="project-tools">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="project-description">
+              <p>ReelSteelScrapmen is a scrap metal collection service based in Bradford, West Yorkshire, covering commercial, domestic,
+                  industrial, and personal clients. I built their website to highlight what sets them apart — eco-friendly processing,
+                  fast and reliable collection, an experienced team, and transparent pricing — with a clean, industrial look and clear
+                  calls to action to request a collection or get in touch.</p>
+            </div>
+            <ul class="project-links">
+              <li><a href="https://www.reelsteelscrapmen.co.uk/" target="_blank" rel="noopener" data-kind="live">Live site</a></li>
+            </ul>
+            <template class="project-gallery">
+              <img src="assets/projects/reelsteelscrapmen/home.png" alt="ReelSteelScrapmen — Home">
+              <img src="assets/projects/reelsteelscrapmen/services.png" alt="ReelSteelScrapmen — Services">
+              <img src="assets/projects/reelsteelscrapmen/faq.png" alt="ReelSteelScrapmen — FAQ">
+            </template>
+          </article>
 
-                            This project demonstrates my ability to architect a complete data warehousing solution, optimise data storage and retrieval, and deliver 
-                            actionable insights through intelligent querying and analytics. It reflects my proficiency in database design, performance tuning, and the 
-                            practical application of data engineering techniques to support data-driven decision-making in a commercial context.
+          <article class="project" data-category="Web Development" data-title="Clearwater Accountancy Website">
+            <img class="project-thumb" src="assets/projects/clearwater/home.png" alt="Clearwater Accountancy Website">
+            <ul class="project-tools">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="project-description">
+              <p>For my first professional project, I independently developed a website for an accountancy firm, leveraging my skills in HTML5, CSS3,
+                  and JavaScript. I incorporated external APIs to enhance specific processes and tailor the website to the project's scale. To ensure
+                  data security and encryption, I implemented SSL certificates. Through thorough research, I carefully selected and used only necessary
+                  resources to optimise the website's performance and efficiency. This project not only strengthened my existing skill set but also
+                  allowed me to effectively deliver a functional and secure website for the accountancy firm in an area where data security is most
+                  valuable.</p>
+            </div>
+            <ul class="project-links">
+              <li><a href="http://clearwater-accounting.co.uk/" target="_blank" rel="noopener" data-kind="live">Live site</a></li>
+              <li><a href="#" target="_blank" rel="noopener" data-kind="github">GitHub</a></li>
+            </ul>
+            <template class="project-gallery">
+              <img src="assets/projects/clearwater/home.png" alt="Clearwater Accountancy — Home">
+              <img src="assets/projects/clearwater/services.png" alt="Clearwater Accountancy — Services">
+              <img src="assets/projects/clearwater/about.png" alt="Clearwater Accountancy — About">
+              <img src="assets/projects/clearwater/contact.png" alt="Clearwater Accountancy — Contact">
+            </template>
+          </article>
 
-</p>
-                        <h4>Technologies</h4>
-                        <img id="project-tools" src="assets/tools/postgres.svg" alt="Postgres">
-                        <img id="project-tools" src="assets/tools/sql.svg" alt="SQL">
-                    </div>
-                </div>
-            </li>
-        </ul>
+          <article class="project" data-category="Web Development" data-title="Gaming News Website">
+            <img class="project-thumb" src="assets/projects/Gamingnews_thumbnail.JPG" alt="Gaming News Website">
+            <ul class="project-tools">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>PHP</li>
+              <li>SQL</li>
+              <li>React</li>
+            </ul>
+            <div class="project-description">
+              <p>I have embarked on an ongoing journey to create my own news article website focused on gaming, aimed at enhancing my web development
+                  skill set. This project has been instrumental in deepening my understanding of backend web development, particularly with HTTP
+                  protocols and PHP. Additionally, it has allowed me to develop advanced scripting capabilities, significantly broadening my technical
+                  expertise. Through this endeavor, I am not only building a platform to share gaming news but also honing my abilities in creating
+                  robust, dynamic web applications. This project has become the foundation of my advanced web development skills, while I have actively
+                  attempted to create each component to my full potential with optimal web development practices, such as responsive design that does
+                  not require breakpoints/media queries and functions flawlessly.</p>
+            </div>
+            <ul class="project-links">
+              <li><a href="https://github.com/Pro-Developer-Luke/Gaming-News-Website" target="_blank" rel="noopener" data-kind="github">GitHub</a></li>
+            </ul>
+            <template class="project-gallery">
+              <img src="assets/projects/Gamingnews_thumbnail.JPG" alt="Gaming news website — Home">
+              <img src="assets/projects/Gamingnews_preview_2.JPG" alt="Gaming news website — Article">
+            </template>
+          </article>
+
+          <article class="project" data-category="Scripting" data-title="Digit Recognition Program">
+            <img class="project-thumb" src="assets/projects/Digitrecognition_thumbnail.JPG" alt="Digit Recognition Program">
+            <ul class="project-tools">
+              <li>Python</li>
+            </ul>
+            <div class="project-description">
+              <p>I developed an AI-powered script using Python, utilising a large dataset and handwriting characteristics to detect handwritten numbers
+                  with high accuracy. The script employed machine learning algorithms, specifically convolutional neural networks (CNNs), to analyse the
+                  digitised images and identify the corresponding numbers. The algorithm was trained on a vast dataset of handwritten numbers, enabling
+                  it to recognise and learn the distinct characteristics of each digit, such as shape, size, and stroke patterns. Additionally, the
+                  script calculated the probability and confidence of each detection, providing a comprehensive output. This allowed for accurate
+                  analysis and verification of the results, as well as identification of potential errors or ambiguities. Once the script finished
+                  processing, it displayed the detected numbers, along with their corresponding probabilities and confidence levels, enabling users
+                  to make informed decisions.</p>
+            </div>
+            <ul class="project-links">
+              <li><a href="https://github.com/Pro-Developer-Luke/AI-Digit-Recognition" target="_blank" rel="noopener" data-kind="github">GitHub</a></li>
+            </ul>
+            <template class="project-gallery">
+              <img src="assets/projects/Digitrecognition_thumbnail.JPG" alt="Digit recognition program">
+            </template>
+          </article>
+
+          <article class="project" data-category="Scripting" data-title="Predicting House Sale Prices">
+            <img class="project-thumb" src="assets/projects/Housing_SalePrices_thumbnail.jpg" alt="Predicting House Sale Prices">
+            <ul class="project-tools">
+              <li>Python</li>
+            </ul>
+            <div class="project-description">
+              <p>In this project, I developed a machine learning model to predict house sale prices based on various property features and location data.
+                  I began by thoroughly evaluating the dataset and the nature of the prediction task, ultimately identifying it as a regression
+                  problem—one that requires a supervised learning approach to estimate continuous numerical values. After preprocessing the data,
+                  handling missing values, and performing feature engineering to improve model performance, I implemented and tested three regression
+                  algorithms: Linear Regression, Random Forest, and XGBoost. Each model was evaluated using standard regression metrics such as
+                  R² score, Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE) to assess prediction accuracy and generalisation.
+                  The goal was to identify which model delivered the highest predictive capability based on the dataset's characteristics.
+                  Ultimately, the results demonstrated that XGBoost provided the best overall performance, outperforming both Random Forest and
+                  Linear Regression in terms of accuracy and robustness. This project showcases my ability to select appropriate machine learning
+                  algorithms, perform model evaluation and comparison, and build effective solutions for real-world regression problems using supervised
+                  learning techniques.</p>
+            </div>
+            <ul class="project-links">
+              <li><a href="https://github.com/Pro-Developer-Luke/AI-Digit-Recognition" target="_blank" rel="noopener" data-kind="github">GitHub</a></li>
+            </ul>
+            <template class="project-gallery">
+              <img src="assets/projects/Housing_SalePrices_thumbnail.jpg" alt="House sale price prediction">
+            </template>
+          </article>
+
+          <article class="project" data-category="Data Warehousing" data-title="Bookstore Chain Data Warehouse">
+            <img class="project-thumb" src="assets/projects/DataWarehouse_Preview.JPG" alt="Bookstore Chain Data Warehouse">
+            <ul class="project-tools">
+              <li>Postgres</li>
+              <li>SQL</li>
+            </ul>
+            <div class="project-description">
+              <p>In this project, I designed and implemented a fully functional data warehousing system for a proposed multi-location bookstore
+                  chain using PostgreSQL. The goal was to provide a scalable infrastructure capable of integrating, organising, and analysing data
+                  from various branches to support business intelligence and strategic decision-making.
+
+                  I began by creating a robust ETL (Extract, Transform, Load) pipeline that streamlined the ingestion of sales, inventory, and customer
+                  data from multiple sources into a central data warehouse. To ensure high performance and scalability, I utilized advanced PostgreSQL
+                  features such as indexing for faster query execution and TimescaleDB partitioning to efficiently manage and query time-series data across
+                  different store locations.
+
+                  Once the data was structured and optimized, I developed a suite of advanced SQL queries to extract meaningful insights into key business
+                  metrics. These queries allowed stakeholders to evaluate store performance by location, analyse sales trends over time, and identify
+                  top-selling products and categories. Additionally, customer data was leveraged to enable targeted promotional campaigns, by identifying
+                  individuals most likely to benefit from specific offers based on their purchasing behavior.
+
+                  This project demonstrates my ability to architect a complete data warehousing solution, optimise data storage and retrieval, and deliver
+                  actionable insights through intelligent querying and analytics. It reflects my proficiency in database design, performance tuning, and the
+                  practical application of data engineering techniques to support data-driven decision-making in a commercial context.</p>
+            </div>
+            <ul class="project-links">
+              <li><a href="https://github.com/Pro-Developer-Luke/AI-Digit-Recognition" target="_blank" rel="noopener" data-kind="github">GitHub</a></li>
+            </ul>
+            <template class="project-gallery">
+              <img src="assets/projects/DataWarehouse_Preview.JPG" alt="Bookstore data warehouse">
+            </template>
+          </article>
+
+        </div>
+
         <!-- More about me -->
         <h2>What's next?</h2>
 <div class="next-projects">
@@ -377,7 +297,7 @@
 </div>
     </div>
     <a href="#nav" class="to-top">
-        <i class="fas fa-chevron-up"></i> 
+        <i class="fas fa-chevron-up"></i>
         <p><b>To top</b></p></a>
     <footer id="footer">
         <div class="footer-container">
