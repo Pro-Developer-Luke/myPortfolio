@@ -220,11 +220,92 @@ function initProjects() {
     source.classList.add('is-hidden');
 
     initProjectFilters(grid);
+    ensureProjectModal();
 }
 
-// Temporary stub — real implementation added in a later task.
+let projectModal = null;
+
+function ensureProjectModal() {
+    if (projectModal) return;
+    projectModal = document.createElement('div');
+    projectModal.className = 'project-modal';
+    projectModal.setAttribute('aria-hidden', 'true');
+    projectModal.innerHTML = `
+        <div class="project-modal-backdrop"></div>
+        <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+            <button type="button" class="project-modal-close" aria-label="Close">&times;</button>
+            <div class="project-modal-media">
+                <img class="project-modal-hero" src="" alt="">
+                <div class="project-modal-thumbs"></div>
+            </div>
+            <div class="project-modal-info">
+                <h2 class="project-modal-title" id="project-modal-title"></h2>
+                <div class="project-modal-desc"></div>
+                <div class="project-modal-tools"></div>
+                <div class="project-modal-links"></div>
+            </div>
+        </div>`;
+    document.body.appendChild(projectModal);
+
+    const close = () => {
+        projectModal.classList.remove('open');
+        projectModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+    projectModal.querySelector('.project-modal-close').addEventListener('click', close);
+    projectModal.querySelector('.project-modal-backdrop').addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && projectModal.classList.contains('open')) close();
+    });
+}
+
 function openProjectModal(article) {
-    console.log('open project:', article.dataset.title);
+    ensureProjectModal();
+
+    const galleryTemplate = article.querySelector('.project-gallery');
+    const images = galleryTemplate
+        ? Array.from(galleryTemplate.content.querySelectorAll('img'))
+              .map((img) => ({ src: img.getAttribute('src'), alt: img.getAttribute('alt') || '' }))
+        : [];
+    const tools = Array.from(article.querySelectorAll('.project-tools li')).map((li) => li.textContent.trim());
+    const descEl = article.querySelector('.project-description');
+    const linksEl = article.querySelector('.project-links');
+
+    projectModal.querySelector('.project-modal-title').textContent = article.dataset.title || '';
+    projectModal.querySelector('.project-modal-desc').innerHTML = descEl ? descEl.innerHTML : '';
+    projectModal.querySelector('.project-modal-tools').innerHTML =
+        tools.map((t) => `<span class="chip">${t}</span>`).join('');
+    projectModal.querySelector('.project-modal-links').innerHTML = linksEl ? linksEl.innerHTML : '';
+
+    const media = projectModal.querySelector('.project-modal-media');
+    const hero = projectModal.querySelector('.project-modal-hero');
+    const thumbs = projectModal.querySelector('.project-modal-thumbs');
+
+    if (images.length) {
+        media.style.display = '';
+        let active = 0;
+        const renderHero = () => {
+            hero.src = images[active].src;
+            hero.alt = images[active].alt;
+            thumbs.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', i === active));
+        };
+        thumbs.replaceChildren(...images.map((img, i) => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.innerHTML = `<img src="${img.src}" alt="">`;
+            b.addEventListener('click', () => { active = i; renderHero(); });
+            return b;
+        }));
+        thumbs.classList.toggle('single', images.length < 2);
+        renderHero();
+        hero.onclick = () => openLightbox(images, active); // overwritten each open (single-slot) — intended
+    } else {
+        media.style.display = 'none';
+    }
+
+    projectModal.classList.add('open');
+    projectModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
 }
 
 function initProjectFilters(grid) {
