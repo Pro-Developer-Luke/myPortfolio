@@ -100,6 +100,22 @@
                 <img src="assets/tools/mysql.svg" alt="MySQL">
                 <h3>MySQL</h3>
             </div>
+            <div class="techstack-item">
+                <img src="assets/tools/typescript.svg" alt="TypeScript">
+                <h3>TypeScript</h3>
+            </div>
+            <div class="techstack-item">
+                <img src="assets/tools/aws.svg" alt="AWS">
+                <h3>AWS</h3>
+            </div>
+            <div class="techstack-item">
+                <img src="assets/tools/terraform.svg" alt="Terraform">
+                <h3>Terraform</h3>
+            </div>
+            <div class="techstack-item">
+                <img src="assets/tools/postman.svg" alt="Postman">
+                <h3>Postman</h3>
+            </div>
         </div>
 
         <div class="preslideinfo">
@@ -107,82 +123,8 @@
             <p>Don't Forget to hover</p>
         </div>
 
-        <div id="slider">
-            <!-- Radio inputs used for slider navigation -->
-            <input type="radio" name="slider" id="slide1" checked>
-            <input type="radio" name="slider" id="slide2">
-            <input type="radio" name="slider" id="slide3">
-            <input type="radio" name="slider" id="slide4">
-
-            <div id="slides">
-                <div id="overflow">
-                    <!-- Clickable slide area linking to projects page -->
-                    <div class="inner" onclick="window.location.href = 'projects.html';">
-                        <!-- Individual project slides with tool icons -->
-                        <div class="slide slide_1" style="background-image: url('assets/projects/Clearwater_thumbnail.JPG');">
-                            <div class="slide-content">
-                                <h2>Clearwater Accounting Website</h2>
-                                <p>Click to view more</p>
-                                <div class="tools">
-                                    <img src="assets/tools/html5.svg" alt="HTML5">
-                                    <img src="assets/tools/css3.svg" alt="CSS3">
-                                    <img src="assets/tools/javascript.svg" alt="JavaScript">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide slide_2" style="background-image: url('assets/projects/EmployeeCoach_thumbnail.jpg');">
-                            <div class="slide-content">
-                                <h2>AI Powered eLearning Application</h2>
-                                <p>Click to view more</p>
-                                <div class="tools">
-                                    <img src="assets/tools/csharp.svg" alt="C#">
-                                    <img src="assets/tools/sql.svg" alt="SQL">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide slide_3" style="background-image: url('assets/projects/Gamingnews_thumbnail.JPG');">
-                            <div class="slide-content">
-                                <h2>Gaming Related News Website</h2>
-                                <p>Click to view more</p>
-                                <div class="tools">
-                                    <img src="assets/tools/html5.svg" alt="HTML5">
-                                    <img src="assets/tools/css3.svg" alt="CSS3">
-                                    <img src="assets/tools/javascript.svg" alt="JavaScript">
-                                    <img src="assets/tools/php.svg" alt="PHP">
-                                    <img src="assets/tools/react.svg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide slide_4" style="background-image: url('assets/projects/GoodLife_thumbnail.png');">
-                            <div class="slide-content">
-                                <h2>Shift Rotation Management Program</h2>
-                                <p>Click to view more</p>
-                                <div class="tools">
-                                    <img src="assets/tools/csharp.svg" alt="C#">
-                                    <img src="assets/tools/sql.svg" alt="SQL">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigation controls (circles/buttons) -->
-            <div id="controls">
-                <label for="slide1"></label>
-                <label for="slide2"></label>
-                <label for="slide3"></label>
-                <label for="slide4"></label>
-            </div>
-
-            <!-- Slide indicator bullets -->
-            <div id="bullets">
-                <label for="slide1"></label>
-                <label for="slide2"></label>
-                <label for="slide3"></label>
-                <label for="slide4"></label>
-            </div>
-        </div>
+        <!-- Slider is rendered by initSlider() in scripts.js from the featuredProjects array -->
+        <div id="slider"></div>
     </div>
 
     <!-- Scroll to top button -->
