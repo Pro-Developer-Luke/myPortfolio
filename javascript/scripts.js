@@ -176,21 +176,6 @@ function initLightbox() {
     });
 }
 
-// ===== Image gallery lightbox (projects page) =====
-function initGalleries() {
-    const galleries = document.querySelectorAll('.gallery');
-    galleries.forEach((gallery) => {
-        const template = gallery.querySelector('template');
-        const imgs = template ? Array.from(template.content.querySelectorAll('img')) : [];
-        const set = imgs.map((img) => ({ src: img.getAttribute('src'), alt: img.getAttribute('alt') || '' }));
-        if (!set.length) return;
-        const count = gallery.querySelector('.gallery-count');
-        if (count) count.textContent = set.length > 1 ? ` ${set.length}` : '';
-        const hero = gallery.querySelector('.gallery-hero');
-        if (hero) hero.addEventListener('click', () => openLightbox(set, 0));
-    });
-}
-
 // ===== Projects: filterable grid + modal (projects page) =====
 function initProjects() {
     const grid = document.getElementById('project-grid');
@@ -324,42 +309,8 @@ function initProjectFilters(grid) {
     });
 }
 
-// ===== Accordion smooth open/close (projects page) =====
-// CSS keeps a 9999px no-JS fallback; here we animate max-height to the panel's
-// real height so it opens and closes at a constant, intuitive pace.
-function initAccordion() {
-    const checkboxes = document.querySelectorAll('.accordion input[type="checkbox"]');
-    if (!checkboxes.length) return;
-
-    checkboxes.forEach((checkbox) => {
-        const li = checkbox.closest('li');
-        const content = li && li.querySelector('.content');
-        if (!content) return;
-
-        // Once fully open, drop the cap so late-loading images and responsive
-        // reflow can grow the panel without clipping.
-        content.addEventListener('transitionend', (e) => {
-            if (e.propertyName === 'max-height' && checkbox.checked) {
-                content.style.maxHeight = 'none';
-            }
-        });
-
-        checkbox.addEventListener('change', () => {
-            if (checkbox.checked) {
-                content.style.maxHeight = content.scrollHeight + 'px';
-            } else {
-                // Pin the current height first, then collapse next frame so the
-                // browser has a concrete start value to animate from.
-                content.style.maxHeight = content.scrollHeight + 'px';
-                requestAnimationFrame(() => { content.style.maxHeight = '0px'; });
-            }
-        });
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     initSlider();
     initLightbox();
-    initGalleries();
     initProjects();
 });
