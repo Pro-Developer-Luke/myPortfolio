@@ -227,8 +227,20 @@ function openProjectModal(article) {
     console.log('open project:', article.dataset.title);
 }
 
-// Temporary no-op stub — real implementation added in the next task.
-function initProjectFilters(grid) {}
+function initProjectFilters(grid) {
+    const filters = document.querySelector('.project-filters');
+    if (!filters) return;
+    filters.addEventListener('click', (e) => {
+        const pill = e.target.closest('.filter-pill');
+        if (!pill) return;
+        filters.querySelectorAll('.filter-pill').forEach((p) => p.classList.toggle('active', p === pill));
+        const filter = pill.dataset.filter;
+        grid.querySelectorAll('.project-card').forEach((card) => {
+            const visible = filter === 'all' || card.dataset.category === filter;
+            card.classList.toggle('is-hidden', !visible);
+        });
+    });
+}
 
 // ===== Accordion smooth open/close (projects page) =====
 // CSS keeps a 9999px no-JS fallback; here we animate max-height to the panel's
