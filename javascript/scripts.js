@@ -105,12 +105,12 @@ function initSlider() {
     goTo(0);
 }
 
-// ===== Image gallery lightbox (projects page) =====
-function initGalleries() {
-    const galleries = document.querySelectorAll('.gallery');
-    if (!galleries.length) return;
+// ===== Reusable fullscreen image lightbox =====
+// Set by initLightbox(); call openLightbox(images, index) where images is
+// [{ src, alt }]. Shared by project galleries and the project modal.
+let openLightbox = null;
 
-    // One shared lightbox for the whole page.
+function initLightbox() {
     const lightbox = document.createElement('div');
     lightbox.className = 'lightbox';
     lightbox.setAttribute('aria-hidden', 'true');
@@ -118,9 +118,7 @@ function initGalleries() {
         <div class="lightbox-backdrop"></div>
         <button type="button" class="lightbox-close" aria-label="Close gallery"><i class="fas fa-times"></i></button>
         <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-        <figure class="lightbox-stage">
-            <img class="lightbox-image" src="" alt="">
-        </figure>
+        <figure class="lightbox-stage"><img class="lightbox-image" src="" alt=""></figure>
         <button type="button" class="lightbox-nav lightbox-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
         <div class="lightbox-thumbs"></div>
     `;
@@ -141,7 +139,6 @@ function initGalleries() {
             return t;
         }));
     }
-
     function show(index) {
         const count = currentSet.length;
         currentIndex = (index + count) % count;
@@ -151,45 +148,45 @@ function initGalleries() {
         lbThumbs.querySelectorAll('.lightbox-thumb').forEach((t, i) => t.classList.toggle('active', i === currentIndex));
         lightbox.classList.toggle('single', count < 2);
     }
-
-    function open(set, index) {
-        currentSet = set;
-        renderThumbs();
-        show(index);
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
-
     function close() {
         lightbox.classList.remove('open');
         lightbox.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
     }
 
+    openLightbox = function (images, index) {
+        currentSet = images;
+        renderThumbs();
+        show(index || 0);
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
     lightbox.querySelector('.lightbox-close').addEventListener('click', close);
     lightbox.querySelector('.lightbox-backdrop').addEventListener('click', close);
     lightbox.querySelector('.lightbox-prev').addEventListener('click', () => show(currentIndex - 1));
     lightbox.querySelector('.lightbox-next').addEventListener('click', () => show(currentIndex + 1));
-
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('open')) return;
         if (e.key === 'Escape') close();
         if (e.key === 'ArrowLeft') show(currentIndex - 1);
         if (e.key === 'ArrowRight') show(currentIndex + 1);
     });
+}
 
+// ===== Image gallery lightbox (projects page) =====
+function initGalleries() {
+    const galleries = document.querySelectorAll('.gallery');
     galleries.forEach((gallery) => {
         const template = gallery.querySelector('template');
         const imgs = template ? Array.from(template.content.querySelectorAll('img')) : [];
         const set = imgs.map((img) => ({ src: img.getAttribute('src'), alt: img.getAttribute('alt') || '' }));
         if (!set.length) return;
-
         const count = gallery.querySelector('.gallery-count');
         if (count) count.textContent = set.length > 1 ? ` ${set.length}` : '';
-
         const hero = gallery.querySelector('.gallery-hero');
-        if (hero) hero.addEventListener('click', () => open(set, 0));
+        if (hero) hero.addEventListener('click', () => openLightbox(set, 0));
     });
 }
 
@@ -228,6 +225,7 @@ function initAccordion() {
 
 document.addEventListener('DOMContentLoaded', () => {
     initSlider();
+    initLightbox();
     initGalleries();
     initAccordion();
 });
