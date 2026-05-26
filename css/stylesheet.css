@@ -612,7 +612,15 @@ flex-direction: column;
   .project-modal-close:hover { color: var(--accent); }
   .project-modal-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
   .project-modal-media { flex: 1 1 50%; min-width: 0; }
-  .project-modal-hero { width: 100%; border-radius: 8px; cursor: zoom-in; display: block; }
+  .project-modal-hero {
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    cursor: zoom-in;
+    display: block;
+  }
   .project-modal-thumbs { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
   .project-modal-thumbs.single { display: none; }
   .project-modal-thumbs button { width: 54px; height: 40px; padding: 0; border-radius: 5px; overflow: hidden; cursor: pointer; border: 1px solid var(--glass-border); background: none; }
@@ -623,8 +631,26 @@ flex-direction: column;
   .project-modal-desc { font-size: 0.92rem; line-height: 1.55; color: var(--text-muted); }
   .project-modal-tools { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0; }
   .project-modal-tools .chip { font-size: 0.7rem; padding: 3px 10px; border-radius: 10px; background: rgba(255,255,255,0.08); border: 1px solid var(--hairline); color: var(--text-muted); }
-  .project-modal-links { display: flex; gap: 14px; }
-  .project-modal-links a { color: var(--accent); font-size: 1.3rem; }
+  .project-modal-links { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+  .project-modal-links li { list-style: none; }
+  .project-modal-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--accent);
+    background: rgba(255, 151, 77, 0.10);
+    border: 1px solid var(--glass-border-hover);
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .project-modal-links a:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #1a1a1a;
+  }
 
   @media only screen and (max-width: 700px) {
     .project-modal-panel { flex-direction: column; }
