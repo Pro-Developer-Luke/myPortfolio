@@ -17,7 +17,7 @@ if (toTop) {
 // ===== Featured projects slider (data-driven) =====
 // To add / reorder a featured project, edit this array. No markup changes needed.
 const featuredProjects = [
-    { title: 'Factor IT — Technology Solutions', image: 'assets/projects/factorit/home.png',            tools: ['html5', 'css3', 'javascript', 'wordpress'], link: 'projects.html' },
+    { title: 'Factor IT, Technology Solutions', image: 'assets/projects/factorit/home.png',            tools: ['html5', 'css3', 'javascript', 'wordpress'], link: 'projects.html' },
     { title: 'ReelSteelScrapmen',                image: 'assets/projects/reelsteelscrapmen/home.png',    tools: ['html5', 'css3', 'javascript'],              link: 'projects.html' },
     { title: 'Clearwater Accountancy Website',   image: 'assets/projects/clearwater/home.png',           tools: ['html5', 'css3', 'javascript'],              link: 'projects.html' },
     { title: 'AI Powered eLearning Application', image: 'assets/projects/EmployeeCoach_thumbnail.jpg',    tools: ['csharp', 'sql'],                            link: 'projects.html' },
@@ -298,7 +298,7 @@ function openProjectModal(article) {
         }));
         thumbs.classList.toggle('single', images.length < 2);
         renderHero();
-        hero.onclick = () => openLightbox(images, active); // overwritten each open (single-slot) — intended
+        hero.onclick = () => openLightbox(images, active); // overwritten each open (single-slot), intended
     } else {
         media.style.display = 'none';
     }
