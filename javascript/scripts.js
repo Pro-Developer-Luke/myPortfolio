@@ -151,7 +151,8 @@ function initLightbox() {
     function close() {
         lightbox.classList.remove('open');
         lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        // Keep scroll locked if the project modal is still open beneath the lightbox.
+        document.body.style.overflow = (projectModal && projectModal.classList.contains('open')) ? 'hidden' : '';
     }
 
     openLightbox = function (images, index) {

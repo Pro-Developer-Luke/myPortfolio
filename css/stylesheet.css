@@ -817,7 +817,7 @@ flex-direction: column;
 .lightbox{
     position: fixed;
     inset: 0;
-    z-index: 1000;
+    z-index: 1100;
     display: none;
     align-items: center;
     justify-content: center;
