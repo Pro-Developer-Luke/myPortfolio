@@ -193,7 +193,41 @@ function initGalleries() {
     });
 }
 
+// ===== Accordion smooth open/close (projects page) =====
+// CSS keeps a 9999px no-JS fallback; here we animate max-height to the panel's
+// real height so it opens and closes at a constant, intuitive pace.
+function initAccordion() {
+    const checkboxes = document.querySelectorAll('.accordion input[type="checkbox"]');
+    if (!checkboxes.length) return;
+
+    checkboxes.forEach((checkbox) => {
+        const li = checkbox.closest('li');
+        const content = li && li.querySelector('.content');
+        if (!content) return;
+
+        // Once fully open, drop the cap so late-loading images and responsive
+        // reflow can grow the panel without clipping.
+        content.addEventListener('transitionend', (e) => {
+            if (e.propertyName === 'max-height' && checkbox.checked) {
+                content.style.maxHeight = 'none';
+            }
+        });
+
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                // Pin the current height first, then collapse next frame so the
+                // browser has a concrete start value to animate from.
+                content.style.maxHeight = content.scrollHeight + 'px';
+                requestAnimationFrame(() => { content.style.maxHeight = '0px'; });
+            }
+        });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initSlider();
     initGalleries();
+    initAccordion();
 });

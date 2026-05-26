@@ -2,10 +2,10 @@
 :root{
     --glass-bg: rgba(15, 15, 20, 0.45);
     --glass-border: rgba(255, 255, 255, 0.12);
-    --glass-border-hover: rgba(255, 151, 77, 0.45);
+    --glass-border-hover: rgba(255, 151, 77, 0.30);
     --glass-radius: 14px;
     --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-    --glass-shadow-hover: 0 8px 28px rgba(255, 151, 77, 0.18), 0 8px 24px rgba(0, 0, 0, 0.35);
+    --glass-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.45);
     --glass-blur: blur(18px) saturate(140%);
 
     --accent: #ff974d;
@@ -533,6 +533,9 @@ flex-direction: column;
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
     margin-bottom: 15px;
+    /* Clip the backdrop-filter to the rounded box — without this Chromium
+       leaves blur artifacts at the corners while the panel resizes. */
+    overflow: hidden;
     transition: border-color .2s ease, box-shadow .2s ease;
   }
 
@@ -563,10 +566,14 @@ flex-direction: column;
     color: #fff;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 1s, padding .5s;
+    transition: max-height .45s ease;
   }
 
   .accordion input[type="checkbox"]:checked + label + .content{
+    /* No-JS fallback. With JS, scripts.js sets the exact pixel height so the
+       open/close runs at a constant pace instead of racing toward 9999px.
+       Padding lives here (open-only) so the collapsed panel is a true 0px box
+       and no text can peek through. */
     max-height: 9999px;
     padding: 15px;
   }
@@ -928,7 +935,7 @@ flex-direction: column;
   }
   .techstack-item:hover{
     transform: scale(1.06);
-    filter: drop-shadow(0 4px 12px rgba(255, 151, 77, 0.35));
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
   }
 
   .techstack-item h3{
@@ -938,6 +945,13 @@ flex-direction: column;
 
   .techstack-item img{
     width: 60px;
+  }
+
+  /* The MySQL mark has heavy internal whitespace in its viewBox (the dolphin +
+     wordmark fill only ~70% of the height), so at 60px it reads noticeably
+     smaller than the others. Widen it to even out the visual weight. */
+  .techstack-item img[src*="mysql"]{
+    width: 85px;
   }
 /* Education / Professional Timeline content */
   .timeline {
