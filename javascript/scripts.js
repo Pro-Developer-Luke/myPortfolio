@@ -190,6 +190,46 @@ function initGalleries() {
     });
 }
 
+// ===== Projects: filterable grid + modal (projects page) =====
+function initProjects() {
+    const grid = document.getElementById('project-grid');
+    const source = document.querySelector('.project-source');
+    if (!grid || !source) return;
+
+    const articles = Array.from(source.querySelectorAll('.project'));
+
+    articles.forEach((article) => {
+        const thumb = article.querySelector('.project-thumb');
+        if (!thumb) return; // markup contract requires a thumbnail; skip defensively
+        const tools = Array.from(article.querySelectorAll('.project-tools li')).map((li) => li.textContent.trim());
+
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'project-card';
+        card.dataset.category = article.dataset.category;
+        card.innerHTML = `
+            <span class="project-card-thumb" style="background-image:url('${thumb.getAttribute('src')}')"></span>
+            <span class="project-card-body">
+                <span class="project-card-title">${article.dataset.title}</span>
+                <span class="project-card-chips">${tools.map((t) => `<span class="chip">${t}</span>`).join('')}</span>
+            </span>`;
+        card.addEventListener('click', () => openProjectModal(article));
+        grid.appendChild(card);
+    });
+
+    source.classList.add('is-hidden');
+
+    initProjectFilters(grid);
+}
+
+// Temporary stub — real implementation added in a later task.
+function openProjectModal(article) {
+    console.log('open project:', article.dataset.title);
+}
+
+// Temporary no-op stub — real implementation added in the next task.
+function initProjectFilters(grid) {}
+
 // ===== Accordion smooth open/close (projects page) =====
 // CSS keeps a 9999px no-JS fallback; here we animate max-height to the panel's
 // real height so it opens and closes at a constant, intuitive pace.
@@ -227,5 +267,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initSlider();
     initLightbox();
     initGalleries();
-    initAccordion();
+    initProjects();
 });
