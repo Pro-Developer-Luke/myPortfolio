@@ -514,6 +514,77 @@ flex-direction: column;
 
   }
 
+  /* Projects page — grid, filter pills, cards */
+  .is-hidden { display: none !important; }
+
+  .project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 24px;
+  }
+  .filter-pill {
+    font: inherit;
+    font-size: 0.9rem;
+    padding: 7px 16px;
+    border-radius: 20px;
+    color: var(--text-muted);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: border-color .2s ease, color .2s ease, background .2s ease;
+  }
+  .filter-pill:hover { border-color: var(--glass-border-hover); color: var(--text); }
+  .filter-pill.active { background: var(--accent); border-color: var(--accent); color: #1a1a1a; font-weight: 600; }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    width: 100%;
+  }
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+    color: var(--text);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--glass-radius);
+    box-shadow: var(--glass-shadow);
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+  .project-card:hover {
+    border-color: var(--glass-border-hover);
+    box-shadow: var(--glass-shadow-hover);
+    transform: translateY(-2px);
+  }
+  .project-card-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+  }
+  .project-card-body { padding: 12px 14px 14px; }
+  .project-card-title { display: block; font-size: 1rem; font-weight: 500; margin-bottom: 10px; }
+  .project-card-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .project-card-chips .chip {
+    font-size: 0.7rem;
+    padding: 2px 9px;
+    border-radius: 10px;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--hairline);
+  }
+
   /* Projects page content */
   .accordion{
     width: 100%;
@@ -1206,6 +1277,12 @@ flex-direction: column;
     font-size: 20px;
   }
 
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+
+  }
+
+  @media only screen and (max-width: 600px) {
+    .project-grid { grid-template-columns: 1fr; }
   }
 
 
