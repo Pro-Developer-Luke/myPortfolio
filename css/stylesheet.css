@@ -943,18 +943,19 @@ flex-direction: column;
     animation: fadeInUp 0.6s forwards;
     height: auto; /* Adjust height as needed */
     box-sizing: border-box; /* Ensure padding is included in height */
+    transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
   }
 
   .timeline-itemED:hover{
-    transition: .5s;
-    border: solid 2px #24c251;
-    box-shadow: 0px 0px 10px #24c251; 
+    border-color: rgba(36, 194, 81, 0.45);
+    box-shadow: var(--glass-shadow-hover);
+    transform: translateY(-2px);
   }
 
   .timeline-itemEX:hover{
-    transition: .5s;
-    border: solid 2px #248bc2;
-    box-shadow: 0px 0px 10px #248bc2; 
+    border-color: rgba(36, 139, 194, 0.45);
+    box-shadow: var(--glass-shadow-hover);
+    transform: translateY(-2px);
   }
   
   .timeline-itemED:nth-child(even),  .timeline-itemEX:nth-child(even) {
@@ -1008,6 +1009,98 @@ flex-direction: column;
   }
   .finalgrade {
       color: #999;
+  }
+/* Experience page — page intro, title rows, chips, pills */
+  .experience-intro{
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .experience-intro h1{
+    margin: 0 0 8px;
+  }
+  .experience-intro p{
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .timeline-column h2{
+    margin-bottom: 10px;
+  }
+
+  .timeline-card-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .timeline-card-title h3{
+    margin: 0;
+  }
+  .timeline-card-title .title-icon{
+    font-size: 1.05rem;
+    flex: 0 0 auto;
+  }
+  .timeline-itemED .title-icon{ color: #24c251; }
+  .timeline-itemEX .title-icon{ color: #248bc2; }
+  .timeline-card-title .present-pill{
+    margin-left: auto;
+  }
+
+  .timeline-card-meta{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: #999;
+    font-size: 0.9rem;
+  }
+  .timeline-card-meta .institution,
+  .timeline-card-meta .company{
+    font-weight: bold;
+    margin: 0;
+  }
+  .timeline-card-meta .date{
+    margin: 0;
+  }
+  .timeline-card-meta .meta-sep{
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .chip{
+    font-size: 0.7rem;
+    padding: 2px 9px;
+    border-radius: 10px;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--hairline);
+    display: inline-block;
+    line-height: 1.5;
+  }
+  .grade-chip{
+    background: rgba(36, 194, 81, 0.15);
+    border-color: rgba(36, 194, 81, 0.45);
+    color: #5fd987;
+  }
+  .present-pill{
+    font-size: 0.7rem;
+    padding: 2px 9px;
+    border-radius: 10px;
+    line-height: 1.5;
+    display: inline-block;
+    background: rgba(255, 151, 77, 0.15);
+    border: 1px solid var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .timeline-tech{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
   }
 /* To-Top button */
   .to-top{
