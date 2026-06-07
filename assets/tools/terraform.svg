@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Terraform">
-  <rect width="128" height="128" rx="14" fill="#7b42bc"/>
-  <g fill="#ffffff">
-    <path d="M55 38 L73 48 L73 70 L55 60 Z"/>
-    <path d="M77 50 L95 60 L95 82 L77 72 Z"/>
-    <path d="M55 64 L73 74 L73 96 L55 86 Z"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Terraform-Icon--Streamline-Svg-Logos" height="24" width="24">
+  <desc>
+    Terraform Icon Streamline Icon: https://streamlinehq.com
+  </desc>
+  <path fill="#4040b2" d="m15.91675 15.517375 6.423325 -3.70515V4.390125L15.91675 8.103125v7.41425Z" stroke-width="0.25"></path>
+  <path fill="#5c4ee5" d="m8.78825 4.389925 6.423325 3.713v7.41425L8.78825 11.808075M1.6599125 7.668175 8.08325 11.37725V3.959075L1.6599125 0.25M8.78825 20.040925 15.211575 23.75V16.331825L8.78825 12.62275" stroke-width="0.25"></path>
 </svg>
