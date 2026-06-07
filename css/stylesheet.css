@@ -544,7 +544,7 @@ flex-direction: column;
 
   }
 
-  /* Projects page — grid, filter pills, cards */
+  /* Projects page: grid, filter pills, cards */
   .is-hidden { display: none !important; }
 
   .project-filters {
@@ -646,7 +646,7 @@ flex-direction: column;
     width: 100%;
     height: 340px;
     object-fit: contain;
-    background: rgba(0, 0, 0, 0.25);
+    background: transparent;
     border-radius: 8px;
     cursor: zoom-in;
     display: block;
@@ -1122,7 +1122,7 @@ flex-direction: column;
   .finalgrade {
       color: #999;
   }
-/* Experience page — page intro, title rows, chips, pills */
+/* Experience page: page intro, title rows, chips, pills */
   .experience-intro{
     text-align: center;
     margin-bottom: 30px;
