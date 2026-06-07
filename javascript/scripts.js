@@ -17,12 +17,12 @@ if (toTop) {
 // ===== Featured projects slider (data-driven) =====
 // To add / reorder a featured project, edit this array. No markup changes needed.
 const featuredProjects = [
-    { title: 'Factor IT, Technology Solutions', image: 'assets/projects/factorit/home.png',            tools: ['html5', 'css3', 'javascript', 'wordpress'], link: 'projects.html' },
-    { title: 'ReelSteelScrapmen',                image: 'assets/projects/reelsteelscrapmen/home.png',    tools: ['html5', 'css3', 'javascript'],              link: 'projects.html' },
-    { title: 'Clearwater Accountancy Website',   image: 'assets/projects/clearwater/home.png',           tools: ['html5', 'css3', 'javascript'],              link: 'projects.html' },
-    { title: 'AI Powered eLearning Application', image: 'assets/projects/EmployeeCoach_thumbnail.jpg',    tools: ['csharp', 'sql'],                            link: 'projects.html' },
-    { title: 'Gaming Related News Website',      image: 'assets/projects/Gamingnews_thumbnail.JPG',      tools: ['html5', 'css3', 'javascript', 'php', 'react'], link: 'projects.html' },
-    { title: 'Shift Rotation Management Program', image: 'assets/projects/GoodLife_thumbnail.png',       tools: ['csharp', 'sql'],                            link: 'projects.html' },
+    { title: 'Factor IT, Technology Solutions', image: 'assets/projects/factorit/home_thumb.webp',            tools: ['html5', 'css3', 'javascript', 'wordpress'], link: 'projects.html' },
+    { title: 'ReelSteelScrapmen',                image: 'assets/projects/reelsteelscrapmen/home_thumb.webp',    tools: ['html5', 'css3', 'javascript'],              link: 'projects.html' },
+    { title: 'Clearwater Accountancy Website',   image: 'assets/projects/clearwater/home_thumb.webp',           tools: ['html5', 'css3', 'javascript'],              link: 'projects.html' },
+    { title: 'AI Powered eLearning Application', image: 'assets/projects/EmployeeCoach_thumbnail_thumb.webp',    tools: ['csharp', 'sql'],                            link: 'projects.html' },
+    { title: 'Gaming Related News Website',      image: 'assets/projects/Gamingnews_thumbnail_thumb.webp',      tools: ['html5', 'css3', 'javascript', 'php', 'react'], link: 'projects.html' },
+    { title: 'Shift Rotation Management Program', image: 'assets/projects/GoodLife_thumbnail_thumb.webp',       tools: ['csharp', 'sql'],                            link: 'projects.html' },
 ];
 
 function initSlider() {
